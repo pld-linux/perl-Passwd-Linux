@@ -14,6 +14,7 @@ License:	unknown
 Group:		Development/Languages/Perl
 Source0:	http://search.cpan.org/CPAN/authors/id/E/EE/EESTABROO/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	f7901ab4706366d8cb9c8fd43e167072
+URL:		http://search.cpan.org/dist/Passwd-Linux/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -28,7 +29,7 @@ permission to modify the shadow file.
 Passwd::Linux dostarcza dodatkowych metod obs³ugi hase³. Powiêksza
 funkcje getpw* o setpwinfo, modpwinfo, rmpwnam, mgetpwnam. Wiêkszo¶æ
 tych funkcji musi byæ uruchomiona z uprawnieniami roota lub osoby
-maj±cej uprawnienia do modyfikajcji pliku shadow.
+maj±cej uprawnienia do modyfikacji pliku shadow.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
