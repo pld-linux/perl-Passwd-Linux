@@ -1,0 +1,60 @@
+#
+# Conditional build:
+%bcond_without	tests		# do not perform "make test"
+#
+%include	/usr/lib/rpm/macros.perl
+%define	pdir	Passwd
+%define	pnam	Linux
+Summary:	Passwd::Linux - Perl module for manipulating the passwd and shadow files
+Summary(pl):	Passwd::Linux - Modu³ Perla do manipulowania plikami passwd i shadow
+Name:		perl-Passwd-Linux
+Version:	0.70
+Release:	1
+License:	unknown
+Group:		Development/Languages/Perl
+Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	f7901ab4706366d8cb9c8fd43e167072
+BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%description
+Passwd::Linux provides additional password routines. It augments the
+getpw* functions with setpwinfo, modpwinfo, rmpwnam, mgetpwnam. You
+need to run most of the functions as root or as someone who has
+permission to modify the shadow file.
+
+%description -l pl
+Passwd::Linux dostarcza dodatkowych metod obs³ugi hase³. Powiêksza
+funkcje getpw* o setpwinfo, modpwinfo, rmpwnam, mgetpwnam. Wiêkszo¶æ
+tych funkcji musi byæ uruchomiona z uprawnieniami roota lub osoby
+maj±cej uprawnienia do modyfikajcji pliku shadow.
+
+%prep
+%setup -q -n %{pdir}-%{pnam}-%{version}
+
+%build
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor
+%{__make} \
+	OPTIMIZE="%{rpmcflags}"
+
+%{?with_tests:%{__make} test}
+
+%install
+rm -rf $RPM_BUILD_ROOT
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(644,root,root,755)
+%doc Changes
+%{perl_vendorarch}/Passwd/*.pm
+%dir %{perl_vendorarch}/auto/Passwd/Linux
+%{perl_vendorarch}/auto/Passwd/Linux/*.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Passwd/Linux/*.so
+%{_mandir}/man3/*
