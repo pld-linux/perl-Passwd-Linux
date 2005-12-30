@@ -9,7 +9,7 @@ Summary:	Passwd::Linux - Perl module for manipulating the passwd and shadow file
 Summary(pl):	Passwd::Linux - Modu³ Perla do manipulowania plikami passwd i shadow
 Name:		perl-Passwd-Linux
 Version:	0.70
-Release:	1
+Release:	2
 License:	unknown
 Group:		Development/Languages/Perl
 Source0:	http://search.cpan.org/CPAN/authors/id/E/EE/EESTABROO/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -45,8 +45,10 @@ maj±cej uprawnienia do modyfikacji pliku shadow.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
+%{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/auto/Passwd/Linux/.packlist
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -54,8 +56,11 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes
+%dir %{perl_vendorarch}/Passwd
 %{perl_vendorarch}/Passwd/*.pm
+%dir %{perl_vendorarch}/auto/Passwd
 %dir %{perl_vendorarch}/auto/Passwd/Linux
 %{perl_vendorarch}/auto/Passwd/Linux/*.bs
+%{perl_vendorarch}/auto/Passwd/Linux/autosplit.ix
 %attr(755,root,root) %{perl_vendorarch}/auto/Passwd/Linux/*.so
 %{_mandir}/man3/*
