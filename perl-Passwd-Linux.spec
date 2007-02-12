@@ -6,7 +6,7 @@
 %define	pdir	Passwd
 %define	pnam	Linux
 Summary:	Passwd::Linux - Perl module for manipulating the passwd and shadow files
-Summary(pl):	Passwd::Linux - Modu³ Perla do manipulowania plikami passwd i shadow
+Summary(pl.UTF-8):   Passwd::Linux - ModuÅ‚ Perla do manipulowania plikami passwd i shadow
 Name:		perl-Passwd-Linux
 Version:	0.70
 Release:	2
@@ -25,11 +25,11 @@ getpw* functions with setpwinfo, modpwinfo, rmpwnam, mgetpwnam. You
 need to run most of the functions as root or as someone who has
 permission to modify the shadow file.
 
-%description -l pl
-Passwd::Linux dostarcza dodatkowych metod obs³ugi hase³. Powiêksza
-funkcje getpw* o setpwinfo, modpwinfo, rmpwnam, mgetpwnam. Wiêkszo¶æ
-tych funkcji musi byæ uruchomiona z uprawnieniami roota lub osoby
-maj±cej uprawnienia do modyfikacji pliku shadow.
+%description -l pl.UTF-8
+Passwd::Linux dostarcza dodatkowych metod obsÅ‚ugi haseÅ‚. PowiÄ™ksza
+funkcje getpw* o setpwinfo, modpwinfo, rmpwnam, mgetpwnam. WiÄ™kszoÅ›Ä‡
+tych funkcji musi byÄ‡ uruchomiona z uprawnieniami roota lub osoby
+majÄ…cej uprawnienia do modyfikacji pliku shadow.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
