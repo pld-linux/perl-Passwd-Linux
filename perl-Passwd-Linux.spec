@@ -6,7 +6,7 @@
 %define	pdir	Passwd
 %define	pnam	Linux
 Summary:	Passwd::Linux - Perl module for manipulating the passwd and shadow files
-Summary(pl.UTF-8):   Passwd::Linux - Moduł Perla do manipulowania plikami passwd i shadow
+Summary(pl.UTF-8):	Passwd::Linux - Moduł Perla do manipulowania plikami passwd i shadow
 Name:		perl-Passwd-Linux
 Version:	0.70
 Release:	2
