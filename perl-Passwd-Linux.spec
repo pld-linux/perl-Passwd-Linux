@@ -61,7 +61,6 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/Passwd/*.pm
 %dir %{perl_vendorarch}/auto/Passwd
 %dir %{perl_vendorarch}/auto/Passwd/Linux
-%{perl_vendorarch}/auto/Passwd/Linux/*.bs
 %{perl_vendorarch}/auto/Passwd/Linux/autosplit.ix
 %attr(755,root,root) %{perl_vendorarch}/auto/Passwd/Linux/*.so
 %{_mandir}/man3/*
