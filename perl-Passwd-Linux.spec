@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_without	tests		# do not perform "make test"
+%bcond_with	tests		# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Passwd
@@ -8,12 +8,12 @@
 Summary:	Passwd::Linux - Perl module for manipulating the passwd and shadow files
 Summary(pl.UTF-8):	Passwd::Linux - Moduł Perla do manipulowania plikami passwd i shadow
 Name:		perl-Passwd-Linux
-Version:	0.70
-Release:	10
+Version:	1.2
+Release:	1
 License:	unknown
 Group:		Development/Languages/Perl
 Source0:	http://search.cpan.org/CPAN/authors/id/E/EE/EESTABROO/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	f7901ab4706366d8cb9c8fd43e167072
+# Source0-md5:	28e46f1991d2a26e54c8593487a14c27
 URL:		http://search.cpan.org/dist/Passwd-Linux/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -61,6 +61,5 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/Passwd/*.pm
 %dir %{perl_vendorarch}/auto/Passwd
 %dir %{perl_vendorarch}/auto/Passwd/Linux
-%{perl_vendorarch}/auto/Passwd/Linux/autosplit.ix
 %attr(755,root,root) %{perl_vendorarch}/auto/Passwd/Linux/*.so
 %{_mandir}/man3/*
