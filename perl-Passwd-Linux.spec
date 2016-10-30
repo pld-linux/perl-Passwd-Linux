@@ -9,7 +9,7 @@ Summary:	Passwd::Linux - Perl module for manipulating the passwd and shadow file
 Summary(pl.UTF-8):	Passwd::Linux - Moduł Perla do manipulowania plikami passwd i shadow
 Name:		perl-Passwd-Linux
 Version:	1.2
-Release:	1
+Release:	2
 License:	unknown
 Group:		Development/Languages/Perl
 Source0:	http://search.cpan.org/CPAN/authors/id/E/EE/EESTABROO/%{pdir}-%{pnam}-%{version}.tar.gz
