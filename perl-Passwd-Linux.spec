@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_with	tests		# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define	pdir	Passwd
 %define	pnam	Linux
 Summary:	Passwd::Linux - Perl module for manipulating the passwd and shadow files
